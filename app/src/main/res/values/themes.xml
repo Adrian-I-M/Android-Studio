@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.RA1" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.RA1" parent="Base.Theme.RA1" />
+    <style name="RoundedTopShape">
+        <item name="cornerSizeTopLeft">32dp</item>
+        <item name="cornerSizeTopRight">32dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+</resources>
