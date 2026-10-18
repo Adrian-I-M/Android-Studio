@@ -8,57 +8,59 @@
     android:background="@drawable/bg_header_gradient"
     tools:context=".MainActivity">
 
-    <!-- RELOJ SUPERIOR -->
-    <TextClock
-        android:id="@+id/textClock"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:textColor="#333333"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- BOTON FLOTANTE SUPERIOR IZQUIERDA -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+    <!-- AVATAR DE USUARIO CON FONDO BLANCO SUPERIOR IZQUIERDA -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/userAvatar"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:clickable="true"
-        android:focusable="true"
-        app:fabCustomSize="40dp"
+        android:background="#FFFFFF"
+        android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textClock"
-        app:srcCompat="@android:drawable/alert_light_frame" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+        app:srcCompat="@android:drawable/ic_menu_myplaces" /> <!-- Cambia por @drawable/tu_foto_perfil si la tienes -->
 
-    <!-- BOTON CIRCULAR SUPERIOR DERECHA -->
-    <Button
-        android:id="@+id/button4"
+    <FrameLayout
+        android:id="@+id/btnNotificationContainer"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
-        android:backgroundTint="#70529C"
-        app:cornerRadius="24dp"
+        android:background="@drawable/bg_circle_button"
+        android:backgroundTint="#FFFFFF"
+        android:elevation="3dp"
+        android:clickable="true"
+        android:focusable="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textClock" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <!-- TITULO BIENVENIDA -->
+        <!-- ICONO DE LA CAMPANA (AQUÍ CONTROLAS SU TAMAÑO) -->
+        <ImageView
+            android:id="@+id/ivBellIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            app:srcCompat="@android:drawable/ic_popup_reminder"
+            app:tint="#1A1A1A" />
+
+    </FrameLayout>
+
+    <!-- TÍTULO BIENVENIDA -->
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="sans-serif-condensed-light"
         android:text="Welcome!"
-        android:textColor="#1A1A1A"
-        android:textSize="32sp"
+        android:textColor="#262626"
+        android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/floatingActionButton" />
+        app:layout_constraintTop_toBottomOf="@+id/userAvatar" />
 
     <TextView
         android:id="@+id/textView4"
@@ -67,7 +69,7 @@
         android:layout_marginStart="24dp"
         android:text="Rajesh"
         android:textColor="#1A1A1A"
-        android:textSize="32sp"
+        android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -77,43 +79,49 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="6dp"
         android:text="How is it going today?"
-        android:textColor="#555555"
-        android:textSize="14sp"
+        android:textColor="#85929E"
+        android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-    <!-- BOTON URGENT CARE -->
-    <Button
+    <!-- BOTÓN URGENT CARE -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button2"
         android:layout_width="wrap_content"
-        android:layout_height="46dp"
+        android:layout_height="50dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="18dp"
-        android:backgroundTint="#FF5722"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#FFA025"
         android:text="Urgent Care"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
-        app:cornerRadius="23dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:cornerRadius="25dp"
+        app:icon="@android:drawable/ic_lock_idle_alarm"
+        app:iconGravity="textStart"
+        app:iconPadding="8dp"
+        app:iconTint="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <!-- IMAGEN DOCTOR -->
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="220dp"
+        android:layout_width="230dp"
         android:layout_height="270dp"
         android:scaleType="fitEnd"
         app:layout_constraintBottom_toTopOf="@+id/bottomAppBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/doctor" />
 
-    <!-- HOJA INFERIOR REDONDEADA -->
+    <!-- HOJA INFERIOR REDONDEADA BLANCA -->
     <View
         android:id="@+id/bottomAppBar"
         android:layout_width="match_parent"
-        android:layout_height="430dp"
+        android:layout_height="440dp"
         android:background="@drawable/bg_rounded_sheet"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -125,10 +133,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:text="Our Services"
         android:textColor="#1A1A1A"
-        android:textSize="16sp"
+        android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/bottomAppBar" />
@@ -136,12 +144,12 @@
     <!-- SERVICIO: CONSULTATION -->
     <ImageButton
         android:id="@+id/btnConsultation"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/bg_circle_button"
         android:contentDescription="Consultation"
-        android:padding="16dp"
+        android:padding="20dp"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toStartOf="@+id/btnMedicines"
         app:layout_constraintHorizontal_chainStyle="spread"
@@ -154,10 +162,10 @@
         android:id="@+id/tvConsultation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="8dp"
         android:text="Consultation"
         android:textColor="#333333"
-        android:textSize="13sp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/btnConsultation"
         app:layout_constraintStart_toStartOf="@+id/btnConsultation"
         app:layout_constraintTop_toBottomOf="@+id/btnConsultation" />
@@ -165,11 +173,11 @@
     <!-- SERVICIO: MEDICINES -->
     <ImageButton
         android:id="@+id/btnMedicines"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
         android:background="@drawable/bg_circle_button"
         android:contentDescription="Medicines"
-        android:padding="16dp"
+        android:padding="20dp"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/btnConsultation"
         app:layout_constraintEnd_toStartOf="@+id/btnAmbulance"
@@ -182,10 +190,10 @@
         android:id="@+id/tvMedicines"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="8dp"
         android:text="Medicines"
         android:textColor="#333333"
-        android:textSize="13sp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/btnMedicines"
         app:layout_constraintStart_toStartOf="@+id/btnMedicines"
         app:layout_constraintTop_toBottomOf="@+id/btnMedicines" />
@@ -193,11 +201,11 @@
     <!-- SERVICIO: AMBULANCE -->
     <ImageButton
         android:id="@+id/btnAmbulance"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
         android:background="@drawable/bg_circle_button"
         android:contentDescription="Ambulance"
-        android:padding="16dp"
+        android:padding="20dp"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/btnMedicines"
         app:layout_constraintEnd_toEndOf="parent"
@@ -210,10 +218,10 @@
         android:id="@+id/tvAmbulance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="8dp"
         android:text="Ambulance"
         android:textColor="#333333"
-        android:textSize="13sp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/btnAmbulance"
         app:layout_constraintStart_toStartOf="@+id/btnAmbulance"
         app:layout_constraintTop_toBottomOf="@+id/btnAmbulance" />
@@ -224,7 +232,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="24dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
@@ -239,7 +247,7 @@
             android:layout_weight="1"
             android:text="Appointment"
             android:textColor="#1A1A1A"
-            android:textSize="18sp"
+            android:textSize="17sp"
             android:textStyle="bold" />
 
         <TextView
@@ -261,7 +269,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="24dp"
         app:cardBackgroundColor="#FFFFFF"
         app:cardCornerRadius="16dp"
@@ -273,13 +281,13 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="12dp">
+            android:paddingBottom="16dp">
 
             <View
                 android:id="@+id/blueIndicator"
                 android:layout_width="4dp"
                 android:layout_height="0dp"
-                android:background="#2F80ED"
+                android:background="#2D7FF3"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -289,10 +297,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="14dp"
                 android:text="Appointment date"
-                android:textColor="#8A95A5"
-                android:textSize="11sp"
+                android:textColor="#9EAEBE"
+                android:textSize="12sp"
                 app:layout_constraintStart_toEndOf="@id/blueIndicator"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -313,11 +321,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="4dp"
                 android:layout_marginEnd="16dp"
                 android:text="🕒  Wed Nov 20  •  8:00 - 8:30 AM"
                 android:textColor="#1A1A1A"
-                android:textSize="12sp"
+                android:textSize="13sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/blueIndicator"
@@ -328,19 +336,19 @@
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="12dp"
                 android:layout_marginEnd="16dp"
-                android:background="#F0F2F5"
+                android:background="#F3F5F8"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/blueIndicator"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvDateTime" />
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/ivDoctorAvatar"
-                android:layout_width="38dp"
-                android:layout_height="38dp"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="12dp"
                 app:layout_constraintStart_toEndOf="@id/blueIndicator"
                 app:layout_constraintTop_toBottomOf="@id/dividerLine"
                 app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
@@ -350,11 +358,11 @@
                 android:id="@+id/tvDoctorName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="12dp"
                 android:layout_marginEnd="16dp"
                 android:text="Dr. Prem Tiwari"
                 android:textColor="#1A1A1A"
-                android:textSize="14sp"
+                android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/ivDoctorAvatar"
@@ -364,12 +372,12 @@
                 android:id="@+id/tvDoctorSpecialty"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="1dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="2dp"
                 android:layout_marginEnd="16dp"
                 android:text="Orthopedic"
-                android:textColor="#8A95A5"
-                android:textSize="12sp"
+                android:textColor="#8E9AA7"
+                android:textSize="13sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/ivDoctorAvatar"
                 app:layout_constraintTop_toBottomOf="@id/tvDoctorName" />
@@ -378,56 +386,86 @@
 
     </androidx.cardview.widget.CardView>
 
-    <!-- BARRA INFERIOR DE NAVEGACION -->
+    <!-- BARRA INFERIOR DE NAVEGACIÓN -->
     <LinearLayout
         android:id="@+id/bottomNavLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="64dp"
+        android:background="#FFFFFF"
+        android:elevation="8dp"
         android:gravity="center"
         android:orientation="horizontal"
-        android:paddingBottom="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
+        <!-- 1. HOME -->
         <ImageButton
-            android:id="@+id/imageButton10"
-            android:layout_width="54dp"
-            android:layout_height="54dp"
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="?attr/selectableItemBackgroundBorderless"
-            app:srcCompat="@android:drawable/alert_light_frame" />
+            android:padding="18dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/ic_nav_home"
+            app:tint="#2F80ED" />
 
+        <!-- 2. RECORDS -->
         <ImageButton
-            android:id="@+id/imageButton9"
-            android:layout_width="54dp"
-            android:layout_height="54dp"
+            android:id="@+id/navRecords"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="?attr/selectableItemBackgroundBorderless"
-            app:srcCompat="@android:drawable/alert_light_frame" />
+            android:padding="18dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@android:drawable/ic_menu_agenda"
+            app:tint="#8E9AA7" />
 
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:backgroundTint="#70529C"
-            app:cornerRadius="28dp" />
+        <!-- 3. BOTÓN CENTRAL DE MÁS (+) -->
+        <FrameLayout
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center">
 
+            <ImageButton
+                android:id="@+id/button5"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_circle_button"
+                android:backgroundTint="#0F2B5C"
+                android:padding="14dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@android:drawable/ic_input_add"
+                app:tint="#FFFFFF" />
+
+        </FrameLayout>
+
+        <!-- 4. CHAT -->
         <ImageButton
-            android:id="@+id/imageButton8"
-            android:layout_width="54dp"
-            android:layout_height="54dp"
+            android:id="@+id/navChat"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="?attr/selectableItemBackgroundBorderless"
-            app:srcCompat="@android:drawable/alert_light_frame" />
+            android:padding="18dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@android:drawable/stat_notify_chat"
+            app:tint="#8E9AA7" />
 
+        <!-- 5. PERFIL -->
         <ImageButton
-            android:id="@+id/imageButton5"
-            android:layout_width="54dp"
-            android:layout_height="54dp"
+            android:id="@+id/navProfile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="?attr/selectableItemBackgroundBorderless"
-            app:srcCompat="@android:drawable/alert_light_frame" />
+            android:padding="18dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/ic_nav_profile"
+            app:tint="#8E9AA7" />
 
     </LinearLayout>
 
