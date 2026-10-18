@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">RA1</string>
+    <string name="welcome">Welcome!</string>
+    <string name="user_name">Rajesh</string>
+    <string name="greeting_subtitle">How is it going today?</string>
+    <string name="urgent_care">Urgent Care</string>
+    <string name="our_services">Our Services</string>
+    <string name="consultation">Consultation</string>
+    <string name="medicines">Medicines</string>
+    <string name="ambulance">Ambulance</string>
+    <string name="appointment">Appointment</string>
+    <string name="see_all">See All</string>
+    <string name="appointment_date_label">Appointment date</string>
+    <string name="appointment_datetime">🕒  Wed Nov 20  •  8:00 - 8:30 AM</string>
+    <string name="doctor_name">Dr. Prem Tiwari</string>
+    <string name="doctor_specialty">Orthopedic</string>
+
+    <!-- Descripciones de accesibilidad para botones e interactivos -->
+    <string name="desc_notifications">Notifications</string>
+    <string name="desc_options">More options</string>
+    <string name="desc_nav_home">Home</string>
+    <string name="desc_nav_records">Records</string>
+    <string name="desc_nav_add">Add appointment</string>
+    <string name="desc_nav_chat">Chat</string>
+    <string name="desc_nav_profile">Profile</string>
 </resources>
