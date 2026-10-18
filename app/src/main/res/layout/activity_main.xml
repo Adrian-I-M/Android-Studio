@@ -408,7 +408,7 @@
             android:background="?attr/selectableItemBackgroundBorderless"
             android:padding="18dp"
             android:scaleType="fitCenter"
-            app:srcCompat="@android:drawable/ic_menu_view"
+            app:srcCompat="@drawable/ic_nav_home"
             app:tint="#2F80ED" />
 
         <!-- 2. RECORDS -->
@@ -464,7 +464,7 @@
             android:background="?attr/selectableItemBackgroundBorderless"
             android:padding="18dp"
             android:scaleType="fitCenter"
-            app:srcCompat="@android:drawable/ic_menu_myplaces"
+            app:srcCompat="@drawable/ic_nav_profile"
             app:tint="#8E9AA7" />
 
     </LinearLayout>
